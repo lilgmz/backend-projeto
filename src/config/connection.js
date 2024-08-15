@@ -9,4 +9,5 @@ const connection = new Sequelize({
     port: 3306
 });
 
-console.log(connection);
+
+module.exports = connection;
