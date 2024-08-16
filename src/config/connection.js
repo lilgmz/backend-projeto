@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize")
 
 const connection = new Sequelize({
     dialect: "mysql",
-    database: "geracaotech",
+    database: "backendgeracao",
     host: "localhost", 
     username: "root",
     password: "senha",
