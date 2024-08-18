@@ -1,6 +1,6 @@
-*COMANDO DE INICIALIZAÇÃO*
-    **npm i -y** --> PACKAGE.JSON <--
-    **npm start** 
+<h2>COMANDO DE INICIALIZAÇÃO</h2> 
+    npm i -y --> PACKAGE.JSON <--
+    npm start
 
 *Bibliotecas Usadas* 
     **nodemon** --> npm install --save-dev nodemon <--
@@ -9,3 +9,5 @@
     **cors** --> npm install cors <--
     **jsonwebtoken** --> npm install jsonwebtoken <--
     **bcrypt** --> npm install bcrypt <--
+
+*Aplicativos Usados*
