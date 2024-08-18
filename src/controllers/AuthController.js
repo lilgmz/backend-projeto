@@ -1,9 +1,11 @@
 const UserModel = require("../models/UserModel");
 const MD5 = require('crypto-js/md5')
 
+const userModel = new UserModel();
+
 class AuthController {
     async login(username, password) {
-        const dados = await UserModel.findAll({
+        const dados = await userModel.findAll({
             where: {
                 username: username,
                 password: MD5(password).toString()

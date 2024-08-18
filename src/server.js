@@ -1,4 +1,3 @@
-const UserModel = require('../src/models/UserModel')
 const ProductModel = require('../src/models/ProductModel')
 const CategoryModel = require('../src/models/CategoryModel')
 const cors = require('cors')
@@ -16,8 +15,6 @@ app.use(cors())
 app.get('/', (request, response) => {
     return response.send("Olá Mundo")
 });
-
-
 
 app.use(ProductModel)
 app.use(CategoryModel)

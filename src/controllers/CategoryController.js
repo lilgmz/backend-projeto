@@ -1,22 +1,23 @@
 const CategoryModel = require("../models/CategoryModel")
 
+const categoryModel = new CategoryModel();
 
 class CategoryController {
 
     listar(request, response){
-        const dados = CategoryModel.listar();
+        const dados = categoryModel.listar();
         return response.json(dados);
     }
 
     consultarPorId(request, response){
         const id = request.params.id;
-        const dados = CategoryModel.consultarPorId(id);
+        const dados = categoryModel.consultarPorId(id);
         return response.json(dados);
     }
 
     criar(request, response){
         const body = request.body;
-        CategoryModel.criar(body);
+        categoryModel.criar(body);
         return response.status(201).json({
             message: "Categoria cadastrado com sucesso"
         })
@@ -25,7 +26,7 @@ class CategoryController {
     atualizar(request, response){
         const id = request.params.id;
         const body = request.body;
-        CategoryModel.atualizar(id, body)
+        categoryModel.atualizar(id, body)
         return response.json({
             message: "Categoria atualizado com sucesso"
         })
@@ -33,7 +34,7 @@ class CategoryController {
 
     deletar(request, response){
         const id = request.params.id;
-        CategoryModel.deletar(id);
+        categoryModel.deletar(id);
         return response.json({
             message: "Categoria deletado com sucesso"
         })

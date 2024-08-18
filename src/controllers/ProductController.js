@@ -1,22 +1,23 @@
 const ProductModel = require("../models/ProductModel")
 
+const productModel = new ProductModel();
 
 class ProductController {
 
     listar(request, response){
-        const dados = ProductModel.listar();
+        const dados = productModel.listar();
         return response.json(dados);
     }
 
     consultarPorId(request, response){
         const id = request.params.id;
-        const dados = ProductModel.consultarPorId(id);
+        const dados = productModel.consultarPorId(id);
         return response.json(dados);
     }
 
     criar(request, response){
         const body = request.body;
-        ProductModel.criar(body);
+        productModel.criar(body);
         return response.status(201).json({
             message: "Produto cadastrado com sucesso"
         })
@@ -25,7 +26,7 @@ class ProductController {
     atualizar(request, response){
         const id = request.params.id;
         const body = request.body;
-        ProductModel.atualizar(id, body)
+        productModel.atualizar(id, body)
         return response.json({
             message: "Produto atualizado com sucesso"
         })
@@ -33,7 +34,7 @@ class ProductController {
 
     deletar(request, response){
         const id = request.params.id;
-        ProductModel.deletar(id);
+        productModel.deletar(id);
         return response.json({
             message: "Produto deletado com sucesso"
         })

@@ -1,21 +1,23 @@
 const UserModel = require('../models/UserModel');
 
+const userModel = new UserModel();
+
 class UserController {
 
     listar(request, response){
-        const dados = UserModel.listar();
+        const dados = userModel.listar();
         return response.json(dados);
     }
 
     consultarPorId(request, response){
         const id = request.params.id;
-        const dados = UserModel.consultarPorId(id);
+        const dados = userModel.consultarPorId(id);
         return response.json(dados);
     }
 
     criar(request, response){
         const body = request.body;
-        UserModel.criar(body);
+        userModel.criar(body);
         return response.status(201).json({
             message: "Usuário cadastrado com sucesso"
         })
@@ -24,7 +26,7 @@ class UserController {
     atualizar(request, response){
         const id = request.params.id;
         const body = request.body;
-        UserModel.atualizar(id, body)
+        userModel.atualizar(id, body)
         return response.json({
             message: "Usuário atualizado com sucesso"
         })
@@ -32,7 +34,7 @@ class UserController {
 
     deletar(request, response){
         const id = request.params.id;
-        UserModel.deletar(id);
+        userModel.deletar(id);
         return response.json({
             message: "Usuário deletado com sucesso"
         })
