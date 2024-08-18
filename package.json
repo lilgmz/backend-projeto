@@ -7,9 +7,9 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Guilherme e Nyvea",
   "license": "ISC",
-  "description": "",
+  "description": "Projeto Back end Geração Tech",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
