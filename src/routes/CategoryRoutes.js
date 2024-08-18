@@ -5,11 +5,11 @@ const CategoryRoutes =  express.Router();
 const categoryControllers = new CategoryControllers();
 
 // CRUD
-CategoryRoutes.get('/users', categoryControllers.listar);
-CategoryRoutes.get('/users/:id', categoryControllers.consultarPorId);
-CategoryRoutes.post('/users', categoryControllers.criar);
-CategoryRoutes.put('/users/:id', categoryControllers.atualizar);
-CategoryRoutes.delete('/users/:id', categoryControllers.deletar);
+CategoryRoutes.get('/products', categoryControllers.listar);
+CategoryRoutes.get('/products/:id', categoryControllers.consultarPorId);
+CategoryRoutes.post('/products', categoryControllers.criar);
+CategoryRoutes.put('/products/:id', categoryControllers.atualizar);
+CategoryRoutes.delete('/products/:id', categoryControllers.deletar);
 // CRUD
 
 module.exports = CategoryRoutes;

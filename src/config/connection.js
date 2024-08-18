@@ -11,4 +11,5 @@ const connection = new Sequelize({
 
 connection.sync()
 
+
 module.exports = connection;
