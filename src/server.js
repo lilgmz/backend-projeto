@@ -7,15 +7,18 @@ const express = require('express')
 const host = 'localhost'
 const port = 3000
 
+
+
 const app = express()
 app.use(express.json())
 app.use(cors())
 
 app.get('/', (request, response) => {
-    return response.send("Olá, eu sou um Backend com NodeJS + Express")
+    return response.send("Olá Mundo")
 });
 
-app.use(UserModel)
+
+
 app.use(ProductModel)
 app.use(CategoryModel)
 

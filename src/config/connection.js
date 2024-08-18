@@ -9,4 +9,6 @@ const connection = new Sequelize({
     port: 3306
 });
 
+connection.sync()
+
 module.exports = connection;
