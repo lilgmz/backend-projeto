@@ -1,4 +1,4 @@
-<h2>COMANDO DE INICIALIZAÇÃO</h2> 
+*COMANDO DE INICIALIZAÇÃO*
     npm i -y --> PACKAGE.JSON <--
     npm start
 
