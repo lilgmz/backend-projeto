@@ -9,9 +9,14 @@
     nodemon --> npm install --save-dev nodemon
     sequelize --> npm install sequelize mysql2
     jsonwebtoken --> npm install jsonwebtoken
+    dotenv --> npm install dotenv --save
+    mysql2 --> npm install --save mysql2
+    crypto-js --> npm install crypto-js
     express --> npm install express
+    sqlite3 --> npm install sqlite3
     bcrypt --> npm install bcrypt
     cors --> npm install cors
+    jest --> npm install jest
     
 <h2>Aplicativos Usados</h2>
 
