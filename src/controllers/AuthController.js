@@ -1,21 +1,25 @@
 const UserModel = require("../models/UserModel");
-const MD5 = require('crypto-js/md5')
-
-const userModel = new UserModel();
+const MD5 = require('crypto-js/md5');
 
 class AuthController {
     async login(username, password) {
-        const dados = await userModel.findAll({
-            where: {
-                username: username,
-                password: MD5(password).toString()
-            }
-        })
+        try {
+            const hashedPassword = MD5(password).toString(); // Criptografa a senha com MD5
+            const user = await UserModel.findAll({
+                where: {
+                    username: username,
+                    password: hashedPassword
+                }
+            });
 
-        if(dados.length) {
-            return dados[0];
+            if (user) {
+                return user; // Retorna o usuário encontrado
+            }
+            return null;
+        } catch (error) {
+            console.error("Erro ao buscar usuário:", error);
+            throw new Error("Erro ao buscar usuário");
         }
-        return null;
     }
 }
 

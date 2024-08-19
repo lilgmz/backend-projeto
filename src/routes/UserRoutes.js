@@ -1,15 +1,14 @@
 const express = require('express');
-const UsersControllers = require('../controllers/UsersControllers');
-const UsersRoutes =  express.Router();
+const UserController = require('../controllers/UserController'); // Certifique-se de que o nome está correto
+const UserRoutes = express.Router();
 
-const usersControllers = new UsersControllers();
+const userController = new UserController();
 
 // CRUD
-UsersRoutes.get('/users', usersControllers.listar);
-UsersRoutes.get('/users/:id', usersControllers.consultarPorId);
-UsersRoutes.post('/users', usersControllers.criar);
-UsersRoutes.put('/users/:id', usersControllers.atualizar);
-UsersRoutes.delete('/users/:id', usersControllers.deletar);
+UserRoutes.get('/v1/user/:id', userController.consultarPorId.bind(userController));
+UserRoutes.post('/v1/user', userController.criar.bind(userController));
+UserRoutes.put('/v1/user/:id', userController.atualizar.bind(userController));
+UserRoutes.delete('/v1/user/:id', userController.deletar.bind(userController));
 // CRUD
 
-module.exports = UsersRoutes;
+module.exports = UserRoutes;

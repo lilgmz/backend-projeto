@@ -1,8 +1,9 @@
 const connection = require('../config/connection');
-const { DataTypes } = require("sequelize")
+const { DataTypes, Model } = require("sequelize")
 
-const ProductModel = connection.define(
-    "ProductModel", {
+class ProductModel extends Model {}
+
+ProductModel.init({
         enable:{ 
            type: DataTypes.BOOLEAN,
         },
@@ -31,8 +32,11 @@ const ProductModel = connection.define(
             type: DataTypes.FLOAT(5, 2),
             allowNull: false
         }
-    }
-);
+    }, {
+        sequelize: connection,
+        modelName: 'ProductModel',
+
+});
 
 
 module.exports = ProductModel;

@@ -1,15 +1,15 @@
 const express = require('express');
-const ProductControllers = require('../controllers/ProductControllers');
-const ProductRoutes =  express.Router();
+const ProductController = require('../controllers/ProductController');
+const ProductRoutes = express.Router();
 
-const productControllers = new ProductControllers();
+const productController = new ProductController();
 
 // CRUD
-ProductRoutes.get('/products', productControllers.listar);
-ProductRoutes.get('/products/:id', productControllers.consultarPorId);
-ProductRoutes.post('/products', productControllers.criar);
-ProductRoutes.put('/products/:id', productControllers.atualizar);
-ProductRoutes.delete('/products/:id', productControllers.deletar);
+ProductRoutes.get('/v1/product/search', productController.listar.bind(productController));
+ProductRoutes.get('/v1/product/:id', productController.consultarPorId.bind(productController));
+ProductRoutes.post('/v1/product', productController.criar.bind(productController));
+ProductRoutes.put('/v1/product/:id', productController.atualizar.bind(productController));
+ProductRoutes.delete('/v1/product/:id', productController.deletar.bind(productController));
 // CRUD
 
 module.exports = ProductRoutes;

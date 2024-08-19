@@ -1,6 +1,5 @@
 const UserModel = require('../models/UserModel');
 
-
 async function execute() {
 
     let user = await UserModel.create({

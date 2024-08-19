@@ -1,10 +1,7 @@
 const connection = require('../config/connection');
 
-require('../models/UserTypesModel');
-require('../models/TagsModel');
+require('../models/CategoryModel');
 require('../models/UserModel');
-require('../models/CommentsModel');
-require('../models/PostModel');
-require('../models/PostTagModel');
+require('../models/ProductModel');
 
 connection.sync({force: true});
